@@ -2,16 +2,18 @@
   "name": "redux-pizza-parlor",
   "version": "0.2.0",
   "private": true,
-  "proxy": "http://localhost:5001",
+  "proxy": "http://localhost:5009",
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.18.2",
     "pg": "^8.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icon": "^1.0.0",
+    "react-icons": "^5.1.0",
     "react-redux": "^7.2.9",
     "react-router-dom": "^5.3.4",
-    "redux": "^4.1.2",
+    "redux": "^4.2.1",
     "redux-logger": "^3.0.6"
   },
   "devDependencies": {

@@ -1,15 +1,122 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#root {
+  max-width: 100wh;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  padding: 2rem;
+  /* text-align: center; */
+  background-color: #053974e8;
+}
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+}
+/* .App {
+  display: flex;
+  flex-direction: colum;
+  width: 100%;
+  background-color: white;
+  column-gap: 20px;
+} */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  background-color: black;
+}
+.App-header {
+  text-align: center;
+  margin-left: 30px;
+  padding-top: 15px;
+  color: white;
+}
+.icon-cart {
+  color: white;
+  font-size: 4rem;
+  padding-top: 15px;
+  margin-left: 1100px;
+}
+.total-price {
+  color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-right: 100px;
+  padding-top: 2rem;
+}
+
+.pizza-page {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 70px;
+}
+
+.pizz-display {
+  background-color: white;
+  width: 250px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.pizz-display img {
+  width: 250px;
+  height: 250px;
+}
+.pizza-names {
+  font-weight: bold;
+  padding: 3px;
   text-align: center;
 }
+.piza-price {
+  font-weight: bold;
+  text-align: right;
+  padding: 5px;
+}
+.btn button:first-child {
+  margin-left: 200px;
+  padding: 10px;
+  font-weight: bold;
+  margin-left: 0px;
 
-.App-header {
-  background-color: #222;
-  height: 70px;
-  padding: 20px;
-  color: white;
-  margin-bottom: 20px;
+  width: 150px;
+
+  cursor: pointer;
+}
+.btn {
+  display: flex;
+  margin-top: 70px;
 }
 
-.App-title {
-  font-size: 2em;
+.btn button:last-child {
+  margin-left: 50px;
+  width: 150px;
+  font-weight: bold;
+}
+
+.next-btn button {
+  padding: 10px;
+  width: 230px;
+  margin-top: 20px;
+  margin-left: 1380px;
+  background-color: rgb(4, 171, 255);
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
 }
