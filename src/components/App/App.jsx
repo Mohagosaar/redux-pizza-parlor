@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { IoCartOutline } from "react-icons/io5";
+import Customer from "../CustomerPage/Customer";
+import { Link, HashRouter, Route } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import axios from "axios";
 import "./App.css";
 
 function App() {
+  // const history = useHistory();
   const [pizza, setPizza] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [selectedPizzaPrize, setselectedPizzaPrize] = useState([]);
   const [totalPrice, setotalPrice] = useState(0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchPizza = async () => {
@@ -50,6 +55,7 @@ function App() {
     } else {
       console.log("Pizza not found!");
     }
+    dispatch({ type: "ADD_CART", payload: selectedPizza });
   };
 
   return (
