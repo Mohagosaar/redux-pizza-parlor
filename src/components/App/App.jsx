@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import Customer from "../CustomerPage/Customer";
-import { Link, HashRouter, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import axios from "axios";
 import "./App.css";
 
 function App() {
-  // const history = useHistory();
+  const history = useHistory();
   const [pizza, setPizza] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [selectedPizzaPrize, setselectedPizzaPrize] = useState([]);
@@ -57,6 +58,9 @@ function App() {
     }
     dispatch({ type: "ADD_CART", payload: selectedPizza });
   };
+  const CustomerRegistration = () => {
+    history.push("/Customer");
+  };
 
   return (
     <div className="App">
@@ -82,11 +86,18 @@ function App() {
                 </button>
                 <button>Remove</button>
               </div>
+              <Router>
+                <Link to="/"></Link>
+
+                <Route exact path="/Customer">
+                  <Customer />
+                </Route>
+              </Router>
             </div>
           ))
         )}
         <div className="next-btn">
-          <button> Next</button>
+          <button onClick={CustomerRegistration}> Next</button>
         </div>
       </div>
     </div>
