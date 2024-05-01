@@ -28,6 +28,11 @@ body {
   column-gap: 20px;
 } */
 
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .hero {
   display: flex;
   justify-content: space-between;
@@ -57,7 +62,7 @@ body {
 
 .pizza-page {
   width: 100%;
-  height: 20px;
+  height: 450px;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -89,23 +94,50 @@ body {
   text-align: right;
   padding: 5px;
 }
-.btn button:first-child {
+.btn-cart {
   margin-left: 200px;
   padding: 10px;
   font-weight: bold;
   margin-left: 0px;
-
-  width: 150px;
-
+  width: 250px;
+  background-color: white;
   cursor: pointer;
 }
 .btn {
   display: flex;
-  margin-top: 70px;
+  margin-top: 60px;
+  flex-direction: column;
 }
 
-.btn button:last-child {
-  margin-left: 50px;
-  width: 150px;
-  font-weight: bold;
+.next-btn button {
+  box-shadow: 10px 10px 20x rgba(0, 0, 0, 0.226);
+  padding: 10px;
+  width: 200px;
+  background-color: rgb(2, 221, 255);
+  border: none;
+  margin-left: 1410px;
+  cursor: pointer;
+}
+.customer-page {
+  width: 100%;
+  background-color: ble;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.customer-page form input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  padding: 10px;
+  width: 300px;
+}
+
+form h2 {
+  color: white;
+  margin-top: 50px;
 }

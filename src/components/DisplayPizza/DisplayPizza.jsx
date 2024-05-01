@@ -4,13 +4,13 @@ import Customer from "../CustomerPage/Customer";
 const DisplayPizza = ({ pizza }) => {
   const history = useHistory();
   const customerPage = () => {
-    history.push("/Customer");
+    // history.push("/Customer");
   };
   return (
     <div>
-      <button className="next-btn" onClick={customerPage}>
+      {/* <button className="next-btn" onClick={customerPage}>
         Next
-      </button>
+      </button> */}
     </div>
   );
 };

@@ -9,9 +9,17 @@ const cart = (state = [], action) => {
   return state;
 };
 
+const updateCart = (state = 0, action) => {
+  if (action.type === "UPDATE_CART") {
+    return action.payload;
+  }
+  return state;
+};
+
 const store = createStore(
   combineReducers({
     cart, // 👈 Be sure to replace this, too!
+    updateCart,
   }),
   applyMiddleware(logger)
 );
