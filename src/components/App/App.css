@@ -166,8 +166,12 @@ form h2 {
   display: flex;
   flex-direction: column;
 }
-.checkout-content {
+.checkout h4 {
+  margin-left: 1200px;
+  margin-top: 20px;
+  font-size: 1.2rem;
 }
+
 .checkout-content h3 {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -179,14 +183,11 @@ form h2 {
 }
 
 .checkout-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-img {
-}
-.checkout-items img {
-  width: 120px;
-}
-/* Apply Flexbox to .table-data for horizontal layout */
-/* Apply Flexbox to .table-data for horizontal layout */
+
 .table-data {
   display: flex;
   flex-direction: row;
@@ -201,7 +202,7 @@ img {
 .table-data table thead tr {
   padding: 30px;
   border: 1px solid black;
-  background-color: aqua;
+  background-color: rgb(179, 179, 179);
 }
 
 .table-data table th {

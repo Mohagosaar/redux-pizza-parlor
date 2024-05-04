@@ -1,5 +1,5 @@
 import "../App/App.css";
-import { IoCartOutline } from "react-icons/io5";
+
 import { useSelector } from "react-redux";
 
 const CheckoutPage = () => {
@@ -12,7 +12,6 @@ const CheckoutPage = () => {
         <header className="App-header">
           <h1 className="App-title">Prime Pizza</h1>
         </header>
-        <IoCartOutline className="icon-cart" />
       </div>
       <div className="checkout-content">
         <h3>Checkout</h3>
@@ -22,7 +21,9 @@ const CheckoutPage = () => {
             <p>{cart.street}</p>
             <p>{cart.city}</p>
             <p>{cart.zip}</p>
-            <p>{cart.shipping}</p>
+            <div className="shippgin">
+              <p>{cart.shipping}</p>
+            </div>
 
             {/* Assuming this is the name of the ordered item */}
           </div>
@@ -39,14 +40,14 @@ const CheckoutPage = () => {
           <tbody>
             {checkOut.map((cart, index) => (
               <tr key={index}>
-                <td>{cart.name}</td>
-                <td>{cart.price}</td>
+                <td>{cart.name && cart.name}</td>
+                <td>{cart.price && cart.price}</td>
               </tr>
             ))}
           </tbody>
         </table>
-        <h4>{totalPrice}</h4>
       </div>
+      <h4>Total: {totalPrice}</h4>
     </div>
   );
 };
