@@ -7,7 +7,6 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import "../App/App.css";
-import DisplayPizza from "../DisplayPizza/DisplayPizza";
 
 const Home = () => {
   const history = useHistory();

@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import "../App/App.css";
 
 const Customer = () => {
+  const history = useHistory();
   //Using for radioBoxcheck
+  const dispatch = useDispatch();
 
   const items = [
     { value: "Delivery", label: "Delivery" },
@@ -17,10 +19,33 @@ const Customer = () => {
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [zip, setZip] = useState("");
-  const [value, setValue] = useState(null);
+  const [shipping, setShipping] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission here
+    if (
+      customerName === "" ||
+      street === "" ||
+      city === "" ||
+      !zip ||
+      shipping === ""
+    ) {
+      alert("Empty field is not allowed");
+      return;
+    }
+    dispatch({
+      type: "ADD_CART",
+      payload: { customerName, street, city, zip, shipping },
+    });
+    setCustomerName("");
+    setStreet("");
+    setCity("");
+    setZip("");
+    setShipping("");
+    history.push("/CheckoutPage");
+  };
+
+  const handleshipping = (event) => {
+    setShipping(event.target.value);
   };
 
   return (
@@ -58,22 +83,24 @@ const Customer = () => {
           placeholder="Zip"
           onChange={(event) => setZip(event.target.value)}
         />
-        <div className="delivery">
-          {items.map((items) => (
-            <div>
-              <input
-                key={items.value}
-                name="delivery"
-                type="radio"
-                value={items.value}
-                id={items.value}
-                checked={value === items.value}
-                onChange={(event) => setValue(event.target.value)}
-              />
-              <label htmlFor={items.value}>{items.label}</label>
-            </div>
-          ))}
+        <div className="shipping">
+          <label>Delivery:</label>
+          <input
+            type="radio"
+            value="delivery"
+            checked={shipping === "delivery"}
+            onChange={handleshipping}
+          />
+
+          <label>Pickup:</label>
+          <input
+            type="radio"
+            value="Pickup"
+            checked={shipping === "Pickup"}
+            onChange={handleshipping}
+          />
         </div>
+
         <div className="next-btn">
           <button type="submit">Next</button>
         </div>
