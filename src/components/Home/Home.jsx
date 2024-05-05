@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import One from "../One/One.jsx";
 import { IoCartOutline } from "react-icons/io5";
 import Customer from "../CustomerPage/Customer.jsx";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";

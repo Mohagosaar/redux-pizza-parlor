@@ -8,13 +8,9 @@ const Customer = () => {
   const history = useHistory();
   //Using for radioBoxcheck
   const dispatch = useDispatch();
-
-  const items = [
-    { value: "Delivery", label: "Delivery" },
-    { value: "Pickup", label: "pickup" },
-  ];
-
   const cartUpdate = useSelector((store) => store.updateCart);
+  const checkout = useSelector((store) => store.cart);
+
   const [customerName, setCustomerName] = useState("");
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
@@ -33,7 +29,7 @@ const Customer = () => {
       return;
     }
     dispatch({
-      type: "ADD_CART",
+      type: "ADDCUSTOMER",
       payload: { customerName, street, city, zip, shipping },
     });
     setCustomerName("");

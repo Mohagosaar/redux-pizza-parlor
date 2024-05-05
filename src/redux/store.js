@@ -15,11 +15,25 @@ const updateCart = (state = 0, action) => {
   }
   return state;
 };
+const customerData = (state = [], action) => {
+  if (action.type === "ADDCUSTOMER") {
+    return [...state, action.payload];
+  }
+  return state;
+};
+const checkout = (state = [], action) => {
+  if (action.type === "CHECKOUT") {
+    return [...state, action.payload];
+  }
+  return state;
+};
 
 const store = createStore(
   combineReducers({
     cart, // 👈 Be sure to replace this, too!
     updateCart,
+    checkout,
+    customerData,
   }),
   applyMiddleware(logger)
 );
