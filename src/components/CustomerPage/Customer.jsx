@@ -37,7 +37,7 @@ const Customer = () => {
     setCity("");
     setZip("");
     setShipping("");
-    history.push("/CheckoutPage");
+    history.push("/Checkout");
   };
 
   const handleshipping = (event) => {

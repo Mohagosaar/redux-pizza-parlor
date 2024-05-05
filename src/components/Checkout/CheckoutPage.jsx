@@ -1,16 +1,18 @@
 import "../App/App.css";
 import axios from "axios";
-
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const CheckoutPage = () => {
-  const dispatch = useDispatch();
-
+  const history = useHistory();
   const checkOut = useSelector((store) => store.customerData);
   const cart = useSelector((store) => store.cart);
 
   const totalPrice = useSelector((store) => store.updateCart);
+
+  /**
+   * this handleCustomerInformation function
+   */
   const handleCustomerInformation = () => {
     cart.forEach((item) => {
       const total = parseFloat(item.price);
@@ -22,15 +24,6 @@ const CheckoutPage = () => {
           zip: zip,
           shipping: type,
         } = customer;
-        console.log(
-          "Customer full information",
-          customer_name,
-          street_address,
-          city,
-          zip,
-          type,
-          total
-        );
 
         axios
           .post("/api/order", {
@@ -49,6 +42,7 @@ const CheckoutPage = () => {
           });
       });
     });
+    history.push("/");
   };
 
   return (

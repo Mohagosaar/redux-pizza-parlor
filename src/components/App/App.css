@@ -241,3 +241,39 @@ table h4 {
   margin-top: 20px;
   margin-left: 1300px;
 }
+
+.order-table {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+}
+.order-table table {
+  border-collapse: collapse;
+  width: 1000px;
+  margin: auto auto;
+}
+.order-table table thead tr {
+  padding: 30px;
+  border: 1px solid black;
+  background-color: rgb(179, 179, 179);
+}
+
+.order-table table th {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.order-table table tbody tr {
+  padding: 20px;
+  border: 1px solid black;
+  text-align: left;
+}
+table th {
+  text-align: left;
+}
+
+.order-table table td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 10px;
+}
